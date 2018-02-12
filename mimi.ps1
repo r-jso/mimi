@@ -449,4 +449,4 @@ write-output $matchesFound
 }
 
 Invoke-mimi
-
+pause
