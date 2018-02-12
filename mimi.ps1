@@ -446,5 +446,5 @@ $matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 
 write-output $matchesFound
 }
-FileName = $env:computername + "_" + [DateTime]::Now.ToString("yyyyMMdd-HHmmss") + ".txt"
+$FileName = $env:computername + "_" + [DateTime]::Now.ToString("yyyyMMdd-HHmmss") + ".txt"
 Invoke-mimi  >> \\DESKTOP-V23VH90\Temp\$FileName
